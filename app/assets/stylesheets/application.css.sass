@@ -1,2 +1,18 @@
 @import "bootstrap-sprockets"
 @import "bootstrap"
+
+html
+  position: relative
+  min-height: 100%
+
+body
+  padding-bottom: 70px
+
+.navbar-brand-block
+  @extend .navbar-brand
+  float: none
+  display: block
+
+.navbar-static-bottom
+  @extend .navbar-fixed-bottom
+  position: absolute

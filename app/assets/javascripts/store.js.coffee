@@ -1,7 +1,7 @@
 # http://emberjs.com/guides/models/#toc_store
 # http://emberjs.com/guides/models/pushing-records-into-the-store/
 
-MagicEightBall.Store = DS.Store.extend({
+MagicEightBall.ApplicationStore = DS.Store.extend({
 
 })
 

@@ -1,0 +1,12 @@
+= partial 'nav'
+
+.container
+  .page-header
+    h1 Magic 8 Ball
+  p Coming soon...
+
+  = outlet
+
+.navbar.navbar-default.navbar-static-bottom role=navigation
+  .container
+    p.navbar-text.text-center &copy; 2014 Jarrod Davis

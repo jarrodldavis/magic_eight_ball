@@ -1,0 +1,9 @@
+.navbar.navbar-default role=navigation
+  .container
+    .navbar-header
+      button.navbar-toggle.collapsed type=button data-toggle='collapse' data-target='#navbar'
+        span.sr-only
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand-block.text-center href='#' Magic 8 Ball
