@@ -4,6 +4,9 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.7'
 
 gem 'rails-api'
+gem 'sorcery'
+gem 'doorkeeper'
+gem 'cancancan'
 
 gem 'spring', :group => :development
 

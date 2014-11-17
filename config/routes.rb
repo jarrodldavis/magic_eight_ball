@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  use_doorkeeper
+  resources :users, except: [:index, :new, :edit]
   root 'ember#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
