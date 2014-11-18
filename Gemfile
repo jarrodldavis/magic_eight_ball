@@ -14,7 +14,7 @@ gem 'spring', :group => :development
 gem 'sqlite3'
 
 gem 'slim-rails'
-gem 'sass-rails', :github => 'rails/sass-rails', :branch => '4-0-stable'
+gem 'sass-rails'
 gem 'coffee-rails'
 
 gem 'autoprefixer-rails'
