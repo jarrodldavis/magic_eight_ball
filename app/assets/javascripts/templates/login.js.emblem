@@ -1,0 +1,5 @@
+.row
+  form.col-md-4.col-sm-6 submit=authenticate role='form'
+    = bs-input-field value=identification label='Login' placeholder='Enter Login'
+    = bs-input-field type='password' value=password label='Password' placeholder='Enter Password'
+    button.btn.btn-primary type=submit Login
