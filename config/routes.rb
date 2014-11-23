@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
   use_doorkeeper
-  resources :users, except: [:index, :new, :edit]
+
   root 'ember#index'
+  resources :users, except: [:index, :new, :edit]
+
+  namespace :api do
+    namespace :v1 do
+      resources :responses, except: [:new, :edit]
+      resources :questions, except: [:new, :edit]
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

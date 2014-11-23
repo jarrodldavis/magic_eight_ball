@@ -6,4 +6,8 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true
 
   validates :email, uniqueness: true
+
+  def is_guest?
+    new_record?
+  end
 end

@@ -3,11 +3,21 @@ class Ability
 
   def initialize(user)
     user ||= User.new
-    alias_action :read, :update, :delete, to: :update_manage
 
     can :create, User
-    can [:read, :update, :delete], User do |requested_user|
+    can [:read, :update, :destroy], User do |requested_user|
       requested_user.id == user.id
+    end
+
+    if user.is_guest?
+      can [:create, :read], Api::V1::Question
+      can [:read], Api::V1::Response
+    else
+      can [:create, :read], Api::V1::Question
+      can [:create, :read, :update, :destroy], Api::V1::Response
+      cannot :destroy, Api::V1::Response do |response|
+        response.default?
+      end
     end
 
     # Define abilities for the passed in user here. For example:

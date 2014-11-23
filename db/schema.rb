@@ -11,7 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141117190622) do
+ActiveRecord::Schema.define(version: 20141121175451) do
+
+  create_table "api_v1_questions", force: true do |t|
+    t.string   "text",        limit: 50
+    t.integer  "response_id",            null: false
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "api_v1_questions", ["response_id"], name: "index_api_v1_questions_on_response_id"
+  add_index "api_v1_questions", ["user_id"], name: "index_api_v1_questions_on_user_id"
+
+  create_table "api_v1_responses", force: true do |t|
+    t.string   "text",       limit: 50
+    t.boolean  "default"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "oauth_access_grants", force: true do |t|
     t.integer  "resource_owner_id", null: false
