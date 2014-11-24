@@ -17,4 +17,3 @@ window.ENV['simple-auth-oauth2'] =
   serverTokenRevocationEndpoint: '/oauth/revoke'
 
 window.MagicEightBall = Ember.Application.create()
-

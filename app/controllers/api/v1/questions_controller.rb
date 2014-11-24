@@ -19,6 +19,7 @@ class Api::V1::QuestionsController < ApplicationController
   # POST /api/v1/questions.json
   def create
     @api_v1_question = Api::V1::Question.new(api_v1_question_params)
+    @api_v1_question.response = Api::V1::Response.offset(rand Api::V1::Response.count).first
 
     if @api_v1_question.save
       render json: @api_v1_question, status: :created, location: @api_v1_question
@@ -51,6 +52,6 @@ class Api::V1::QuestionsController < ApplicationController
   private
     
     def api_v1_question_params
-      params.require(:question).permit(:text, :response_id, :user_id)
+      params.require(:question).permit(:text, :user_id)
     end
 end

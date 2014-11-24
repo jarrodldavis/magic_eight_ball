@@ -1,0 +1,15 @@
+.row
+  form.col-md-6 submit=askQuestion role='form'
+    h2 Ask
+    .form-group
+      label.sr-only for='question' Ask the Eight Ball a question
+      .input-group
+        = input class='form-control' id='question' value=question placeholder='Ask a question'
+        span.input-group-btn: button.btn.btn-primary type='submit' Ask
+  .col-md-6
+    h2 Receive
+    if response
+      p Your question: {{response.question}}
+      p The 8 Ball's Response: {{response.text}}
+    else
+      p The 8 Ball awaits your question&hellip;

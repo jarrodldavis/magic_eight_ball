@@ -1,3 +1,3 @@
-class Api::V1::ResponseSerializer < ActiveModel::Serializer
+class Api::V1::ResponseSerializer < ApplicationSerializer
   attributes :id, :text, :default
 end
