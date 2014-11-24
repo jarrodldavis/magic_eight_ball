@@ -1,5 +1,22 @@
 .row
-  form.col-md-4.col-sm-6 submit=authenticate role='form'
-    = bs-input-field value=identification label='Login' placeholder='Enter Login'
-    = bs-input-field type='password' value=password label='Password' placeholder='Enter Password'
+  form.col-md-6 submit=authenticate role='form'
+    h2 Login
+    .form-group
+      label for='loginIdentification' Email
+      = input class='form-control' id='loginIdentification' value=identification placeholder='Enter Email'
+    .form-group
+      label for='loginPassword' Password
+      = input class='form-control' id='loginPassword' type='password' value=password placeholder='Enter Password'
     button.btn.btn-primary type=submit Login
+  form.col-md-6 submit=register role='form'
+    h2 Register
+    .form-group
+      label for='registerEmail' Email
+      = input class='form-control' id='registerEmail' value=register.email placeholder='Enter Email'
+    .form-group
+      label for='registerPassword' New Password
+      = input class='form-control' id='registerPassword' type='password' value=register.password placeholder='Create a New Password'
+    .form-group
+      label for='registerPasswordConfirmation' New Password Confirmation
+      = input class='form-control' id='registerPasswordConfirmation' type='password' value=register.passwordConfirmation placeholder='Confirm New Password'
+    button.btn.btn-primary type=submit Register
