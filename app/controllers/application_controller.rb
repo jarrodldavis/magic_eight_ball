@@ -3,6 +3,8 @@ class ApplicationController < ActionController::API
   include CanCan::ControllerAdditions
   include ActionController::Serialization
 
+  check_authorization
+
   rescue_from CanCan::AccessDenied do |exception|
     render json: { error: "You cannot access this #{exception.subject.class.to_s}" }, status: :forbidden
   end
