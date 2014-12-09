@@ -6,7 +6,7 @@ class ApplicationController < ActionController::API
   check_authorization
 
   rescue_from CanCan::AccessDenied do |exception|
-    render json: { error: "You cannot access this #{exception.subject.class.to_s}" }, status: :forbidden
+    render json: { error: "You cannot #{exception.action} this #{exception.subject.class.name.demodulize.humanize(capitalize: false)}" }, status: :forbidden
   end
 
   private
