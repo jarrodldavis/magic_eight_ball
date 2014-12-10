@@ -15,7 +15,7 @@ class Ability
     else
       can [:create, :read], Api::V1::Question
       can [:create, :read, :update, :destroy], Api::V1::Response
-      cannot :destroy, Api::V1::Response do |response|
+      cannot [:destroy, :update], Api::V1::Response do |response|
         response.default?
       end
     end

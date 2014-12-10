@@ -1,0 +1,10 @@
+h3 Update Response
+form role="form" submit=update
+  .form-group
+    label for="name" Name
+    = input .form-control#name disabled=model.default value=model.text
+  button#saveBtn.btn.btn-primary type="submit" data-loading-text="Saving..." disabled=model.default Update
+h3
+  | Question History
+  span.small  #{model.totalQuestions} Questions Answered
+p Coming soon...

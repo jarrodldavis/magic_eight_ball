@@ -1,0 +1,14 @@
+h2 Responses
+.row
+  .col-md-6
+    .list-group
+      each response in model
+        link-to .list-group-item 'responses.individual' response
+          span.badge = response.totalQuestions
+          .list-group-item-heading = response.text
+          if response.default
+            .list-group-item-text.text-muted Default Response
+          else
+            .list-group-item-text.text-primary Editable Response
+  .col-md-6
+    = outlet

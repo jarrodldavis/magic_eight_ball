@@ -2,4 +2,5 @@
 
 MagicEightBall.Router.map ()->
   @route 'login'
-
+  @resource 'responses', ->
+    @route 'individual', path: '/:response_id'
