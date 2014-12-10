@@ -1,0 +1,15 @@
+h3 Update Account
+form role="form" submit=update
+  .form-group
+    label for="email" Email
+    = input .form-control#email value=model.email
+  .form-group
+    label for="password" Update Password
+    = input .form-control#password type="password" value=model.password
+  .form-group
+    label for="passwordConfirmation" Update Password (Confirmation)
+    = input .form-control#passwordConfirmation type="password" value=model.passwordConfirmation
+  button#saveBtn.btn.btn-primary type="submit" data-loading-text="Saving..." Update
+h3 Remove Account
+form role="form" submit=remove
+  button#removeBtn.btn.btn-danger type="submit" data-loading-text="Removing..." Remove

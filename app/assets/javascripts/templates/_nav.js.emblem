@@ -11,6 +11,7 @@
       ul.nav.navbar-nav
         if session.isAuthenticated
           li: a href='#' click="invalidateSession" Log Out
+          bs-link-to text='Account' route='account'
           bs-link-to text='Responses' route='responses'
           bs-link-to text='History' route='history'
         else

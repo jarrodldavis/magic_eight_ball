@@ -5,10 +5,10 @@ Doorkeeper.configure do
 
   # This block will be called to check whether the resource owner is authenticated or not.
   resource_owner_authenticator do
-    #fail "Please configure doorkeeper resource_owner_authenticator block located in #{__FILE__}"
+    fail "Please configure doorkeeper resource_owner_authenticator block located in #{__FILE__}"
     # Put your resource owner authentication logic here.
     # Example implementation:
-    User.find_by_id(session[:user_id]) || redirect_to(new_user_session_url)
+    # User.find_by_id(session[:user_id]) || redirect_to(new_user_session_url)
   end
 
   resource_owner_from_credentials do |routes|
@@ -77,7 +77,7 @@ Doorkeeper.configure do
   #
   # If not specified, Doorkeeper enables all the four grant flows.
   #
-  # grant_flows %w(authorization_code implicit password client_credentials)
+  grant_flows %w(password)
 
   # Under some circumstances you might want to have applications auto-approved,
   # so that the user skips the authorization step.

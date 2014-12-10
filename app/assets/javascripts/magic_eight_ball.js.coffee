@@ -1,3 +1,4 @@
+#= require ./session
 #= require ./store
 #= require_tree ./models
 #= require_tree ./controllers

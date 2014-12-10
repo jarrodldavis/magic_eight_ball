@@ -12,6 +12,7 @@
 window.ENV = window.ENV || {};
 window.ENV['simple-auth'] =
   authorizer: 'simple-auth-authorizer:oauth2-bearer'
+  session: 'session:withCurrentUser'
 window.ENV['simple-auth-oauth2'] =
   serverTokenEndpoint: '/oauth/token'
   serverTokenRevocationEndpoint: '/oauth/revoke'
