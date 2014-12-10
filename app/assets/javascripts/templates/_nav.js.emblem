@@ -9,4 +9,8 @@
       a.navbar-brand-block.text-center href='#' Magic 8 Ball
     #navbar.collapse.navbar-collapse
       ul.nav.navbar-nav
-        = bs-link-to text='Login' route='login'
+        if session.isAuthenticated
+          li: a href='#' click="invalidateSession" Log Out
+          bs-link-to text='Responses' route='responses'
+        else
+          = bs-link-to text='Login' route='login'

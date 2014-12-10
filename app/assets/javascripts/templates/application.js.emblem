@@ -3,7 +3,6 @@
 .container
   .page-header
     h1 Magic 8 Ball
-  p Coming soon...
 
   = outlet
 
