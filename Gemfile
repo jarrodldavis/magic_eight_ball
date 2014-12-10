@@ -11,7 +11,7 @@ gem 'cancancan'
 gem 'spring', :group => :development
 
 
-gem 'sqlite3'
+gem 'pg'
 
 gem 'slim-rails'
 gem 'sass-rails'
