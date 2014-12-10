@@ -16,12 +16,17 @@ class Api::V1::QuestionsController < ApplicationController
   # POST /api/v1/questions
   # POST /api/v1/questions.json
   def create
-    @question.response = Api::V1::Response.offset(rand Api::V1::Response.count).first
-
-    if @question.save
-      render json: @question, status: :created, location: @question
+    if Api::V1::Response.count < 1
+      @question.errors.add :response, 'insufficient number of responses'
+      render json: @question.errors, status: :internal_server_error
     else
-      render json: @question.errors, status: :unprocessable_entity
+      @question.response = Api::V1::Response.offset(rand Api::V1::Response.count).first
+
+      if @question.save
+        render json: @question, status: :created, location: @question
+      else
+        render json: @question.errors, status: :unprocessable_entity
+      end
     end
   end
 
