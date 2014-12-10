@@ -4,6 +4,9 @@ form role="form" submit=update
     label for="name" Name
     = input .form-control#name disabled=model.default value=model.text
   button#saveBtn.btn.btn-primary type="submit" data-loading-text="Saving..." disabled=model.default Update
+h3 Remove Response
+form role="form" submit=remove
+  button#removeBtn.btn.btn-danger type="submit" data-loading-text="Removing..." disabled=model.default Remove
 h3
   | Question History
   span.small  #{model.totalQuestions} Questions Answered
