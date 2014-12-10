@@ -1,2 +1,2 @@
-MagicEightBall.LoginRoute = Ember.Route.extend
+MagicEightBall.LoginRoute = Ember.Route.extend SimpleAuth.UnauthenticatedRouteMixin,
   setupController: (controller) -> @controller.set 'register', {}

@@ -5,3 +5,4 @@ MagicEightBall.Router.map ()->
   @resource 'responses', ->
     @route 'individual', path: '/:response_id'
     @route 'new'
+  @route 'history'

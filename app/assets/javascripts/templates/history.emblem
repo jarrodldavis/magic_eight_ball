@@ -1,0 +1,13 @@
+h2 History
+table.table.table-hover
+  thead
+    tr
+      th Question
+      th Response
+      th Actions
+  tbody
+    each question in model: if question.id
+      tr
+        td: question.text
+        td: question.response.text
+        td: link-to .btn.btn-default 'responses.individual' question.response | Edit Response ##{question.response.id}
